@@ -1,0 +1,69 @@
+﻿<Window x:Class="MetroConnectApp.ReportIssuesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Report Issues" Height="500" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="Report an Issue" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" HorizontalAlignment="Center"/>
+
+            <!-- Location TextBlock Label -->
+            <TextBlock Text="Enter location:" FontWeight="Bold" Margin="0,0,0,10"/>
+
+            <!-- Location TextBox with Placeholder -->
+            <Grid Margin="0,0,0,10">
+                <TextBlock x:Name="txtLocationPlaceholder"
+                           Text="Enter location..."
+                           Foreground="Gray"
+                           IsHitTestVisible="False"
+                           VerticalAlignment="Center"
+                           Margin="4,0,0,0"
+                           Visibility="Visible"/>
+                <TextBox x:Name="txtLocation"
+                         Background="Transparent"
+                         TextChanged="TextBox_TextChanged"
+                         GotFocus="TextBox_GotFocus"
+                         LostFocus="TextBox_LostFocus"
+                         VerticalAlignment="Center"/>
+            </Grid>
+
+            <!-- Category ComboBox -->
+            <TextBlock Text="Category:" FontWeight="Bold"/>
+            <ComboBox x:Name="cmbCategory" Margin="0,0,0,10">
+                <ComboBoxItem Content="Select Category" IsSelected="True"/>
+                <ComboBoxItem Content="Sanitation"/>
+                <ComboBoxItem Content="Roads"/>
+                <ComboBoxItem Content="Utilities"/>
+            </ComboBox>
+
+            <!-- Description RichTextBox with Placeholder -->
+            <TextBlock Text="Description:" FontWeight="Bold"/>
+            <Grid>
+                <TextBlock x:Name="rtbDescriptionPlaceholder"
+                           Text="Describe the issue..."
+                           Foreground="Gray"
+                           IsHitTestVisible="False"
+                           VerticalAlignment="Center"
+                           Margin="4,0,0,0"
+                           Visibility="Visible"/>
+                <RichTextBox x:Name="rtbDescription"
+                             GotFocus="RichTextBox_GotFocus"
+                             LostFocus="RichTextBox_LostFocus"
+                             TextChanged="RichTextBox_TextChanged"
+                             Height="100"
+                             Margin="0,0,0,10"/>
+            </Grid>
+
+            <!-- Attach Media Button -->
+            <Button x:Name="btnAttachMedia" Content="Attach Media" Click="BtnAttachMedia_Click" Margin="0,0,0,10"/>
+
+            <!-- Submit Button -->
+            <Button x:Name="btnSubmit" Content="Submit" Click="BtnSubmit_Click" Margin="0,0,0,10"/>
+
+            <!-- View Reports Button -->
+            <Button x:Name="btnViewReports" Content="View Reports" Click="BtnViewReports_Click" Margin="0,0,0,10"/>
+
+            <!-- Back to Main Menu Button -->
+            <Button x:Name="btnBack" Content="Back to Main Menu" Click="BtnBack_Click" Margin="0,0,0,10"/>
+        </StackPanel>
+    </Grid>
+</Window>

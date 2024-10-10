@@ -1,0 +1,42 @@
+﻿<Window x:Class="MetroConnectApp.StartupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="StartupWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+
+    <!-- Single child element (Grid) for the Window -->
+    <Grid>
+        <!-- Set the background of the Grid to the image -->
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Images/Startup-Background.jpg"/>
+        </Grid.Background>
+
+        <!-- StackPanel as a child of Grid -->
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <!-- Welcome Message -->
+            <TextBlock Text="Welcome to MetroConnect" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Margin="0,0,0,20" 
+                       HorizontalAlignment="Center"/>
+            <!-- Instruction Text -->
+            <TextBlock Text="Choose an option below to get started:" 
+                       FontSize="14" 
+                       Margin="0,0,0,20" 
+                       HorizontalAlignment="Center"/>
+
+            <!-- Button to Start -->
+            <Button Content="Start" 
+                    Width="200" 
+                    Margin="0,10,0,10" 
+                    Click="BtnStart_Click"/>
+
+
+            <!-- Button to Exit Application -->
+            <Button Content="Exit" 
+                    Width="200" 
+                    Margin="0,10,0,10" 
+                    Click="BtnExit_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

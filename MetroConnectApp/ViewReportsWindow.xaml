@@ -1,0 +1,27 @@
+﻿<Window x:Class="MetroConnectApp.ViewReportsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="View Reports" Height="550" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="Submitted Reports" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <ListView x:Name="lvReports" Height="300">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Request ID" Width="120" DisplayMemberBinding="{Binding RequestID}"/>
+                        <GridViewColumn Header="Description" Width="300" DisplayMemberBinding="{Binding Description}"/>
+                        <GridViewColumn Header="Media Path" Width="200" DisplayMemberBinding="{Binding MediaPath}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <TextBox x:Name="txtDescription" Width="400" Margin="0,10,0,0" Text="Enter report description..."/>
+            <TextBox x:Name="txtMediaPath" Width="400" Margin="0,10,0,0" Text="Enter media path..."/>
+            <Button Content="Submit Report" Click="BtnSubmit_Click" Width="200" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+
+            <!-- Back to Menu Button -->
+            <Button Content="Back to Menu" Click="BtnBack_Click" Width="200" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>
